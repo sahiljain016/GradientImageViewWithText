@@ -1,4 +1,4 @@
-package com.auro.sahilkilibrary
+package com.auro.sahilkisdk
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.painter.Painter
@@ -16,13 +16,12 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun GradientImageView(
-    image: Int,
+    image: Painter,
     modifier: Modifier = Modifier,
     description: String = "",
     contentDescription: String = "",
@@ -36,7 +35,7 @@ fun GradientImageView(
             .clickable { onImageClick() }
     ) {
         Image(
-            painter = painterResource(image),
+            painter = image,
             contentDescription = contentDescription,
             contentScale = ContentScale.Crop,
             modifier = Modifier
